@@ -1,4 +1,4 @@
 resolve the conflict
 
 
-to revert
+to try git revert and revert changes
