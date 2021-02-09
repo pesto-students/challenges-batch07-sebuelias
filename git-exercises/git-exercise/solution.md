@@ -21,3 +21,5 @@ can add tag to a specific commit by following then command with commit ID
 -a for annotated tag message needs to be added with -m option, or text editor will open asking for it.
 
 openssl on windows need to be installed
+
+git revert creates a new commit at the end, which undoes what the reverted commit did.
