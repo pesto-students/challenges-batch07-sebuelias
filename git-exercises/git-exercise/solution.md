@@ -15,3 +15,9 @@ git stash
 stash save is deprecated, so we use git stash push -m "message" now, with message acting as name.
 cannot pop stash when we have modified files.
 when popping stash after changes to it, we need to resolve conflicts carefully.
+
+git tag
+can add tag to a specific commit by following then command with commit ID
+-a for annotated tag message needs to be added with -m option, or text editor will open asking for it.
+
+openssl on windows need to be installed
