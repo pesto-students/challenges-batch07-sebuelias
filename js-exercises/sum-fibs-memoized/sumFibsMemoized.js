@@ -1,7 +1,4 @@
 function sumFibs(num) {
-  /* if (num < 0 || typeof num !== 'number') {
-    throw new Error('Invalid Parameter');
-  } */
   let previous = 0;
   let current = 1;
   let sum = 0;
@@ -15,14 +12,9 @@ function sumFibs(num) {
     current = next;
   }
   return sum;
-  /*   if (num < 2) {
-    return num;
-  }
-  return sumFibs(num - 1) + sumFibs(num - 2); */
 }
 
 function cacheFunction(cachedFunction) {
-  /* memo = memo || {}; */
   const cache = {};
   return function caching(num) {
     if (cache[num] !== undefined) {
