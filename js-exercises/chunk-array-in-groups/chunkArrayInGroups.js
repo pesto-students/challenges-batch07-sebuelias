@@ -5,19 +5,15 @@ function chunkArrayInGroups(array, chunkSize) {
   if (typeof chunkSize !== 'number') {
     throw new Error('Second parameter passed is not a number');
   }
-  const chunkedArray = [];
-  let remainingElementCount = array.length;
-  for (let index = 0; index < array.length; index += chunkSize) {
-    remainingElementCount = array.length - index;
-    if (remainingElementCount === 1) {
-      chunkedArray.push([array[index]]);
-    } else if (remainingElementCount <= chunkSize) {
-      chunkedArray.push(array.slice(index, array.length));
-    } else {
+  return array.reduce((chunkedArray, value, index) => {
+    /* Check to confirm a chunk has been iterated over */
+    if (index % chunkSize === 0) {
+      /*  if end value (2nd argument) exceed the array length,
+      we slice till the last element */
       chunkedArray.push(array.slice(index, index + chunkSize));
     }
-  }
-  return chunkedArray;
+    return chunkedArray;
+  }, []);
 }
 
 export { chunkArrayInGroups };
