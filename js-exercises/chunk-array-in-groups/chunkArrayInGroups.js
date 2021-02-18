@@ -1,4 +1,10 @@
 function chunkArrayInGroups(array, chunkSize) {
+  if (!Array.isArray(array)) {
+    throw new Error(' First parameter passed is not an array');
+  }
+  if (typeof chunkSize !== 'number') {
+    throw new Error('Second parameter passed is not a number');
+  }
   const chunkedArray = [];
   let remainingElementCount = array.length;
   for (let index = 0; index < array.length; index += chunkSize) {
