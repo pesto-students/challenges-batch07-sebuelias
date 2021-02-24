@@ -1,0 +1,163 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  --headerColor: #01345b;
+  --footerColor: #f5b935; /* e9bd43 */ /* f5b935 */ /* ffcf43 */
+  --sidebarColor: #23c0ad; /* 5ce0d8 */
+  --fontFooter: var(--headerColor);
+  --fontHeader: var(--footerColor);
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 10px;
+}
+main {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.side-bar {
+  background-color: var(--footerColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 0 1 auto;
+  padding: 1rem;
+  flex-basis: 0;
+  font-size: 1rem;
+}
+.side-bar .las:hover {
+  color: var(--sidebarColor);
+}
+
+.music-player {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.playlist-header {
+  background-color: var(--headerColor);
+  display: flex;
+  flex: 1 0 auto;
+  padding: 3rem;
+}
+
+.playlist-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.playlist-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5%;
+  color: var(--fontHeader);
+}
+
+.playlist-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.playlist-details p:first-of-type {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.playlist-buttons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.playlist-songs {
+  background-image: linear-gradient(
+    to right,
+    var(--headerColor),
+    var(--sidebarColor),
+    var(--headerColor)
+  );
+  flex-grow: 1;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+.playlist-songs li:nth-child(odd) {
+  background: var(--footerColor);
+  color: var(--headerColor);
+}
+.playlist-songs li:nth-child(even) {
+  background: var(--headerColor);
+  color: var(--footerColor);
+}
+
+.song-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 2rem;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.catty-cloud {
+  padding: 0.2rem;
+  text-decoration: none;
+}
+
+.playlist-songs li:nth-child(even) .catty-cloud,
+.catty-cloud:hover {
+  background: var(--headerColor);
+  color: var(--footerColor);
+  border: 1px solid var(--footerColor);
+}
+.playlist-songs li:nth-child(even) .catty-cloud:hover,
+.catty-cloud {
+  background: var(--footerColor);
+  color: var(--headerColor);
+  border: 1px solid var(--headerColor);
+}
+
+.footer-class {
+  font-size: 1rem;
+  background-color: var(--footerColor);
+  color: var(--fontFooter);
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  flex-grow: 1fr 1fr;
+  margin-bottom: auto;
+}
+
+.current-song {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  flex: 1 1 auto;
+}
+.current-song-info {
+  padding-left: 1rem;
+}
+.player-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.player-buttons i:hover,
+.playlist-buttons i:hover {
+  color: var(--sidebarColor);
+}
