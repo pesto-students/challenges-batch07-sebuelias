@@ -82,16 +82,14 @@ main {
 
 .playlist-songs {
   background-image: linear-gradient(
-    to right,
-    var(--headerColor),
-    var(--sidebarColor),
-    var(--headerColor)
+    /* to right, */ var(--headerColor),
+    /* var(--sidebarColor), */ var(--footerColor)
   );
   flex-grow: 1;
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  justify-content: space-between;
+  /* display: flex; */
+  /* flex: 1 0 auto; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
   padding: 0;
   margin: 0;
   font-size: 0.8rem;
@@ -104,7 +102,9 @@ main {
   background: var(--headerColor);
   color: var(--footerColor);
 }
-
+.playlist-songs li:last-of-type {
+  border-bottom: 1px solid var(--headerColor);
+}
 .song-details {
   display: flex;
   justify-content: space-between;
