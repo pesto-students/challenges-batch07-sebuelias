@@ -29,12 +29,21 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   flex: 0 1 auto;
-  padding: 1rem;
+  padding: .5rem;
   flex-basis: 0;
   font-size: 1rem;
 }
-.side-bar .las:hover {
-  color: var(--sidebarColor);
+
+.side-bar .las , .side-bar .lab{
+  padding: .6rem;
+  border-radius: 100px;
+  transition: background .5s ;
+}
+
+.side-bar .las:hover, .side-bar .lab:hover {
+  background-color: var(--headerColor);
+  color: var(--footerColor);
+  border-radius: 100px;
 }
 
 .music-player {
@@ -81,17 +90,25 @@ main {
   justify-content: space-between;
   font-size: 0.8rem;
 }
+.playlist-buttons i{
+  border-radius: 100px;
+  padding: .5rem;
+  transition: background .5s ;
+}
+.playlist-buttons i:hover{
+  background-color: var(--footerColor);
+  color: var(--headerColor);
+  border-radius: 100px;
+  padding: .5rem;
+}
 
 .playlist-songs {
   background-image: linear-gradient(
-    /* to right, */ var(--headerColor),
-    /* var(--sidebarColor), */ var(--footerColor)
+    var(--headerColor),
+    var(--footerColor)
   );
+
   flex-grow: 1;
-  /* display: flex; */
-  /* flex: 1 0 auto; */
-  /* flex-direction: column; */
-  /* justify-content: flex-start; */
   padding: 0;
   margin: 0;
   font-size: 0.8rem;
@@ -127,6 +144,8 @@ main {
 .catty-cloud {
   padding: 0.2rem;
   text-decoration: none;
+  border-radius: 100px;
+  transition: background .5s ;
 }
 
 .playlist-songs li:nth-child(even) .catty-cloud,
@@ -169,7 +188,15 @@ main {
   align-items: center;
   flex: 1 1 auto;
 }
-.player-buttons i:hover,
-.playlist-buttons i:hover {
-  color: var(--sidebarColor);
+.player-buttons .las{
+  padding: .5rem;
+  border-radius: 100px;
+  transition: background .5s ;
+}
+
+.player-buttons .las:hover{
+  background-color: var(--headerColor);
+  color: var(--footerColor);
+  border-radius: 100px;
+  padding: .5rem;
 }
