@@ -29,4 +29,34 @@ function getTotalTime(passcode, keypadStr) {
   return timeTaken;
 }
 
-export { getTotalTime };
+// eslint-disable-next-line arrow-body-style
+const withValidation = (fn, validatorfn) => {
+  return (...args) => {
+    validatorfn(...args);
+    return fn(...args);
+  };
+};
+
+const validatorFn = (passcode, keypadStr) => {
+  if (typeof passcode !== 'string') {
+    throw new Error('passcode must be a string');
+  }
+  if (typeof keypadStr !== 'string') {
+    throw new Error('keypadStr must be a string');
+  }
+  if (keypadStr.length !== 9) {
+    throw new Error('keypadStr must be a string of length 9');
+  }
+  // eslint-disable-next-line no-restricted-globals
+  if (isNaN(keypadStr) && isNaN(parseFloat(keypadStr))) {
+    throw new Error('keypadStr must be a string of numbers');
+  }
+  // eslint-disable-next-line no-restricted-globals
+  if (isNaN(passcode) && isNaN(parseFloat(passcode))) {
+    throw new Error('keypadStr must be a string of numbers');
+  }
+};
+
+const getTotalTimeWithValidation = withValidation(getTotalTime, validatorFn);
+
+export { getTotalTimeWithValidation as getTotalTime };
